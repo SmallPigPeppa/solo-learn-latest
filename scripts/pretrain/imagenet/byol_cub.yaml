@@ -32,8 +32,8 @@ data:
   num_workers: 4
 optimizer:
   name: "lars"
-  batch_size: 64
-  lr: 0.45
+  batch_size: 256
+  lr: 1.2
 #  batch_size: 256
 #  lr: 1.2
   classifier_lr: 0.2
@@ -58,4 +58,4 @@ sync_batchnorm: True
 accelerator: "gpu"
 strategy: "ddp"
 precision: 16-mixed
-accumulate_grad_batches: 16
+#accumulate_grad_batches: 16

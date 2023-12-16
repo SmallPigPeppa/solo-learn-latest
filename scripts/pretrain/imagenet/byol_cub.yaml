@@ -11,7 +11,7 @@ hydra:
   run:
     dir: .
 
-name: "byol-imagenet"
+name: "byol-imagenet-cub"
 method: "byol"
 backbone:
   name: "resnet50"

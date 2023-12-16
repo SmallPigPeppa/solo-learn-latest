@@ -25,6 +25,7 @@ _N_CLASSES_PER_DATASET = {
     "cifar100": 100,
     "stl10": 10,
     "imagenet": 1000,
+    "imagenet-cub": 1200,
     "imagenet100": 100,
 }
 
@@ -33,6 +34,7 @@ _SUPPORTED_DATASETS = [
     "cifar100",
     "stl10",
     "imagenet",
+    "imagenet-cub",
     "imagenet100",
     "custom",
 ]
@@ -146,7 +148,7 @@ def parse_cfg(cfg: omegaconf.DictConfig):
     cfg.data.num_small_crops = num_small_crops
 
     if cfg.data.format == "dali":
-        assert cfg.data.dataset in ["imagenet100", "imagenet", "custom"]
+        assert cfg.data.dataset in ["imagenet100", "imagenet", "custom","imagenet-cub"]
 
     # adjust lr according to batch size
     cfg.num_nodes = omegaconf_select(cfg, "num_nodes", 1)

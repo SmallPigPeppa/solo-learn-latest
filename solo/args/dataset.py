@@ -36,6 +36,7 @@ def dataset_args(parser: ArgumentParser):
         "stl10",
         "imagenet",
         "imagenet-cub",
+        "imagenet-mini",
         "imagenet100",
         "custom",
     ]

@@ -37,6 +37,7 @@ def dataset_args(parser: ArgumentParser):
         "imagenet",
         "imagenet-cub",
         "imagenet-mini",
+        "imagenet-cifar",
         "imagenet100",
         "custom",
     ]

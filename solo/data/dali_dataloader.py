@@ -367,6 +367,7 @@ def build_transform_pipeline_dali(dataset, cfg, dali_device):
         "imagenet": (IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD),
         "imagenet-cub": (IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD),
         "imagenet-mini": (IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD),
+        "imagenet-cifar": (IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD),
     }
 
     mean, std = MEANS_N_STD.get(
@@ -866,7 +867,7 @@ class ClassificationDALIDataModule(pl.LightningDataModule):
         assert dali_device in ["gpu", "cpu"]
 
         # handle custom data by creating the needed pipeline
-        if dataset in ["imagenet100", "imagenet","imagenet-cub","imagenet-mini"]:
+        if dataset in ["imagenet100", "imagenet","imagenet-cub","imagenet-mini","imagenet-cifar"]:
             self.pipeline_class = NormalPipelineBuilder
         elif dataset == "custom":
             self.pipeline_class = CustomNormalPipelineBuilder

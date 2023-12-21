@@ -11,7 +11,7 @@ hydra:
   run:
     dir: .
 
-name: "byol-imagenet-mini-r18"
+name: "byol-imagenet-cifar-r18"
 method: "byol"
 backbone:
   name: "resnet18"
